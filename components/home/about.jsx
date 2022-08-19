@@ -47,7 +47,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className={styles.imageBox}>
+        <div className={`${styles.imageBox} ${styles.image1}`}>
           <Image
             className={styles.image}
             src={image1}

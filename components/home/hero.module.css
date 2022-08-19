@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  font-family: IBM_Plex_Sans, serif;
 }
 
 .title {

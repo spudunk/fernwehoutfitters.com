@@ -3,6 +3,9 @@
   background-repeat: no-repeat;
   background-position: 40% 60%;
   background-size: 100%;
+
+  font-family: Noto_Sans, sans-serif;
+
 }
 
 .container {
@@ -48,6 +51,12 @@
   font-weight: 600;
 }
 
+.icon {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: bottom;
+  margin-right: .5rem;
+}
 
 
 @media (max-width: 62.5em) {  /* 1000px */

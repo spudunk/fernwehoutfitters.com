@@ -25,6 +25,18 @@ a {
   margin: 0;
 }
 
+@font-face {
+  font-family: 'IBM_Plex_Sans';
+  src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto_Sans';
+  src: url('../fonts/Noto_Sans/NotoSans-Medium.ttf');
+}
+
+
+
 /* 
 @media (prefers-color-scheme: dark) {
   html {
