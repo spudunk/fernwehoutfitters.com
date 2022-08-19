@@ -1,0 +1,23 @@
+.card {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+align-items: center;
+text-align: center;
+max-width: 30rem;
+padding-bottom: 2rem;
+padding-top: 1rem;
+}
+
+
+.title {
+font-size: 2rem;
+}
+
+.image {
+  overflow: hidden;
+  max-width: 20rem;
+  max-height: 20rem;
+  min-width: 20rem;
+  border-radius: 100%;
+}

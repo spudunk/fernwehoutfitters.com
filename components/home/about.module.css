@@ -1,0 +1,52 @@
+.container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+
+  display: grid;  
+  grid-template: 1fr 1fr / 1fr 1.3fr 1fr;
+  gap: 4rem;
+  overflow: hidden;
+
+}
+
+.title  {
+  padding-bottom: 2.5rem;
+}
+
+.imageBox {
+  overflow: hidden;
+  max-height: 30rem;
+  vertical-align: middle;
+  display:flex;
+  align-items: center;
+}
+
+@media (max-width: 62.5em) {  /* 1000px */
+
+  .container {
+    grid-template: repeat(3, 1fr) / 1fr 1fr;
+  }
+  
+  .image1 {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+  }
+}
+@media (max-width: 37.5em) {  /* 600px */
+  .container {
+    grid-template: repeat(6, auto) / 1fr
+  }
+
+  .image1 {
+    grid-row: initial;
+    grid-column: initial;
+  }
+}
+
+@media (max-width: 25em) {  /* 400px */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

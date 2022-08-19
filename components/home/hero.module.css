@@ -1,0 +1,43 @@
+.container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 15rem;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-size: 3.4rem;
+  font-weight: 300;
+}
+
+@media (max-width: 62.5em) {  /* 1000px */
+  .title {
+    font-size: 12rem;
+  }
+  .subtitle {
+    font-size: 3rem;
+  }
+
+}
+@media (max-width: 37.5em) {  /* 600px */
+  .title {
+    font-size: 7rem;
+  }
+  .subtitle {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 25em) {  /* 400px */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
