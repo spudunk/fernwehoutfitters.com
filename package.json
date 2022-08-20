@@ -18,6 +18,7 @@
     "@icons-pack/react-simple-icons": "^5.4.0",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
+    "firebase": "^9.9.3",
     "next-export-optimize-images": "^1.6.0"
   }
 }

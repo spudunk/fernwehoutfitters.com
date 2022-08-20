@@ -4,7 +4,7 @@
   background-position: 40% 60%;
   background-size: 100%;
 
-  font-family: Noto_Sans, sans-serif;
+  font-family: Noto Sans, sans-serif;
 
 }
 
@@ -67,6 +67,9 @@
 }
 
 @media (max-width: 37.5em) {  /* 600px */
+  .body {
+    font-size: 1.5rem;
+  }
   .backdrop {
     background-color: #ffffff99;
   }
@@ -77,14 +80,16 @@
   .quotebox {
     grid-column: 1 / -1;  
     align-self: start;
+    font-size: 2.1rem;
   }
   .card {
     grid-column: 1 / -1;
   }
 }
+
 @media (max-width: 25em) {  /* 400px */
   .container {
-    min-height: 50vh;
+    min-height: 40vh;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -92,5 +97,13 @@
   .card {
     bottom: 1rem;
     padding-right: 1rem;
+  }
+}
+
+@media (max-width: 25em) {  /* 400px */
+  .container {
+    min-height: 35vh;
+    grid-template: auto 1fr / 1fr 1fr;
+    gap: .5rem;
   }
 }

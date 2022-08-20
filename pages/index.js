@@ -1,12 +1,37 @@
+// Next
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
+// Firebase
+import { initializeApp } from 'firebase/app';
+import { getAnalytics, isSupported } from "firebase/analytics";
+
+// Sections
 import Hero from "../components/home/hero";
 import About from "../components/home/about";
 import Products from "../components/home/products";
 import Contact from "../components/home/contact";
 import Footer from "../components/footer";
+
+// Styles
+import styles from "../styles/Home.module.css";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDCzcYqYd4lIfSZtmHzc1SnD2QLquKu9UI",
+  authDomain: "fernweh-website.firebaseapp.com",
+  databaseURL: "https://fernweh-website-default-rtdb.firebaseio.com",
+  projectId: "fernweh-website",
+  storageBucket: "fernweh-website.appspot.com",
+  messagingSenderId: "131008107454",
+  appId: "1:131008107454:web:71a67723c65744e9f95fef",
+  // measurementId: "G-E68591VJ3D"
+};
+
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+// only grab the analytics if supported
+const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
 
 export default function Home() {
   return (
