@@ -4,9 +4,6 @@ const withExportImages = require("next-export-optimize-images");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    disableStaticImages: true,
-  },
 };
 
 module.exports = withExportImages(nextConfig);
