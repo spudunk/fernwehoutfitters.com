@@ -19,25 +19,14 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  letter-spacing: .1px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
 }
-
-/* Old font, not optimized from local */
-/* 
-@font-face {
-  font-family: 'IBM_Plex_Sans';
-  src: url('../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Noto_Sans';
-  src: url('../fonts/Noto_Sans/NotoSans-Medium.ttf');
-  font-display: swap;
-} */
-
 
 
 /* 
@@ -51,10 +40,8 @@ a {
   }
 } */
 
-@media (max-width: 62.5em) {  /* 1000px */
 
-
-}
+/* 62.5em = 1000px */
 @media (max-width: 37.5em) {  /* 600px */
   body {
     font-size: 1.5rem;
@@ -65,8 +52,4 @@ a {
   body {
     font-size: 1.3rem;
   }
-}
-
-a:hover {
-  letter-spacing: .1px;
 }
