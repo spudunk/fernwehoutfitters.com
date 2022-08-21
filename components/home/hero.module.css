@@ -1,3 +1,7 @@
+.section {
+  background-color: #e7ded9;
+}
+
 .container {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -6,6 +10,7 @@
   justify-content: center;
   min-height: 100vh;
   font-family: IBM Plex Sans, serif;
+
 }
 
 .title {

@@ -1,3 +1,9 @@
+.main {
+  background-color: #e7ded9;
+  background-image: linear-gradient(to bottom, #e7ded9 100vh, white , #e7ded9);
+
+}
+
 
 /* 
 @media (max-width: 600px) {
