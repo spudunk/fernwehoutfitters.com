@@ -18,9 +18,9 @@ const About = () => {
             go experience life in other places, and leave the world better than
             they find it.
           </p>
-          <p>
-            “The world is a book and those who do not travel read only one
-            page.” - St. Augustine
+          <p  className={styles.quote}>
+            &quot;The world is a book and those who do not travel read only one
+            page.&quot; - St. Augustine
           </p>
         </div>
 
@@ -40,10 +40,10 @@ const About = () => {
             business through helping them share their products all over the
             world.
           </p>
-          <p>
-            “ When you support handmade you are not just supporting a person,
+          <p className={styles.quote}>
+            &quote;When you support handmade you are not just supporting a person,
             small business, family, our economy; you are purchasing a small part
-            of an artist&apos;s heart. - Anonymus
+            of an artist&apos;s heart.&quote; - Anonymus
           </p>
         </div>
 
@@ -64,9 +64,9 @@ const About = () => {
             through it I hope to leave a positive impact on my customers and the
             planet we share.
           </p>
-          <p>
-            “There are no foreign lands. It is the traveler only who is
-            foreign.” - Robert Louis Stevenson
+          <p className={styles.quote}>
+            &quot;There are no foreign lands. It is the traveler only who is
+            foreign.&quot; - Robert Louis Stevenson
           </p>
         </div>
         <div className={styles.imageBox}>

@@ -13,7 +13,10 @@
 .title  {
   padding-bottom: 2.5rem;
 }
-
+.quote {
+  padding-top: 1rem;
+  font-style: italic;
+}
 .imageBox {
   overflow: hidden;
   max-height: 30rem;
