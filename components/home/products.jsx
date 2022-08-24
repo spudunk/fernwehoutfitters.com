@@ -7,7 +7,7 @@ import apparelPic from "../../public/apparel.jpeg";
 
 const Products = () => {
   return (
-    <section className={styles.products}>
+    <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Featured Products</h2>
 
