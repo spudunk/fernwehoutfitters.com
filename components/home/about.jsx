@@ -41,9 +41,9 @@ const About = () => {
             world.
           </p>
           <p className={styles.quote}>
-            &quote;When you support handmade you are not just supporting a person,
+            &quot;When you support handmade you are not just supporting a person,
             small business, family, our economy; you are purchasing a small part
-            of an artist&apos;s heart.&quote; - Anonymus
+            of an artist&apos;s heart.&quot; - Anonymus
           </p>
         </div>
 
