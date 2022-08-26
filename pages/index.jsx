@@ -43,10 +43,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Hero />
+        {/* <Hero />
         <About />
         <Products />
-        <Contact />
+        <Contact /> */}
       </main>
       <Footer />
     </div>
