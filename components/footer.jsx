@@ -3,7 +3,7 @@ import styles from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.section}>
-      &copy; 2022 Fernweh Outfitters
+      &copy; 2025 Fernweh Outfitters
     </footer>
   );
 

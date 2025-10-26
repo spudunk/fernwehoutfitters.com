@@ -1,0 +1,433 @@
+spudunk@MacBook-Air fernwehoutfitters.com % npm run export             
+> fernwehoutfitters.com@0.1.0 export
+> next build && next export  && next-export-optimize-images
+info - [next-export-optimize-images]: Configuration loaded from `/Users/spudunk/Documents/Code/fernwehoutfitters.com/export-images.config.js`.
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+info  - Linting and checking validity of types  
+info  - Creating an optimized production build  
+info  - Compiled successfully
+info  - Collecting page data  
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization  
+Page                                       Size     First Load JS
+┌ ○ / (683 ms)                             79.8 kB         158 kB
+├   └ css/a171bbef9f1fd4d1.css             183 B
+├   /_app                                  0 B            77.7 kB
+├ ○ /404                                   186 B          77.9 kB
+└ λ /api/hello                             0 B            77.7 kB
++ First Load JS shared by all              77.7 kB
+  ├ chunks/framework-db825bd0b4ae01ef.js   45.7 kB
+  ├ chunks/main-c116b7e3001a0605.js        30.7 kB
+  ├ chunks/pages/_app-0e6b46beaaa55ac1.js  498 B
+  ├ chunks/webpack-3433a2a2d0cf6fb6.js     819 B
+  └ css/8da07ad022fd84ba.css               205 B
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+info - [next-export-optimize-images]: Configuration loaded from `/Users/spudunk/Documents/Code/fernwehoutfitters.com/export-images.config.js`.
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+info  - using build directory: /Users/spudunk/Documents/Code/fernwehoutfitters.com/.next
+info  - Copying "static build" directory
+info  - No "exportPathMap" found in "/Users/spudunk/Documents/Code/fernwehoutfitters.com/next.config.js". Generating map from "./pages"
+info  - Launching 7 workers
+warn  - Statically exporting a Next.js application via `next export` disables API routes.
+This command is meant for static-only hosts, and is not necessary to make your application static.
+Pages in your application without server-side data dependencies will be automatically statically exported by `next build`, including pages powered by `getStaticProps`.
+Learn more: https://nextjs.org/docs/messages/api-routes-static-export
+info  - Copying "public" directory
+info  - Exporting (3/3)
+Export successful. Files written to /Users/spudunk/Documents/Code/fernwehoutfitters.com/out
+next-export-optimize-images: Optimize images.
+/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1
+"use strict";
+Object.defineProperty(exports,"__esModule",{value:true});
+function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{getOptimizeResult:function(){return getOptimizeResult},optimizeImages:function(){return optimizeImages},run:function(){return run}});
+var _regeneratorRuntime=_interopRequireDefault(require("regenerator-runtime"));
+var _crypto=require("crypto");
+var _path=_interopRequireDefault(require("path"));
+var _ansiColors=_interopRequireDefault(require("ansi-colors"));
+var _fsExtra=_interopRequireDefault(require("fs-extra"));
+var _sharp=_interopRequireDefault(require("sharp"));
+var _getConfig=_interopRequireDefault(require("../utils/getConfig"));
+var _processManifest=_interopRequireDefault(require("../utils/processManifest"));
+var _externalImages=_interopRequireDefault(require("./external-images"));
+var _cache=require("./utils/cache");
+var _cliProgressBar=require("./utils/cliProgressBar");
+var _formatValidate=_interopRequireDefault(require("./utils/formatValidate"));
+var _uniqueItems=_interopRequireDefault(require("./utils/uniqueItems"));
+function asyncGeneratorStep(gen,resolve,reject,_next,_throw,key,arg){try{var info=gen[key](arg);
+var value=info.value}catch(error){reject(error);
+return}if(info.done){resolve(value)}else{Promise.resolve(value).then(_next,_throw)}}function _asyncToGenerator(fn){return function(){var self=this,args=arguments;
+return new Promise(function(resolve,reject){var gen=fn.apply(self,args);
+function _next(value){asyncGeneratorStep(gen,resolve,reject,_next,_throw,"next",value)}function _throw(err){asyncGeneratorStep(gen,resolve,reject,_next,_throw,"throw",err)}_next(undefined)})}}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectSpread(target){for(var i=1;
+i<arguments.length;
+i++){var source=arguments[i]!=null?arguments[i]:{};
+var ownKeys=Object.keys(source);
+if(typeof Object.getOwnPropertySymbols==="function"){ownKeys=ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym){return Object.getOwnPropertyDescriptor(source,sym).enumerable}))}ownKeys.forEach(function(key){_defineProperty(target,key,source[key])})}return target}var getOptimizeResult=function(){var _ref=_asyncToGenerator(_regeneratorRuntime.default.mark(function _callee(param){var destDir,noCache,cacheImages,cacheDir,cacheMeasurement,nonCacheMeasurement,errorMeasurement,pushInvalidFormatAssets,cliProgressBarIncrement,originalFilePath,output,width,quality,extension,sharpOptions,filePath,outputPath,imageBuffer,cacheImagesFindIndex,hash,currentCacheImage,image,filePath1;
+return _regeneratorRuntime.default.wrap(function _callee$(_ctx){while(1)switch(_ctx.prev=_ctx.next){case 0:destDir=param.destDir,noCache=param.noCache,cacheImages=param.cacheImages,cacheDir=param.cacheDir,cacheMeasurement=param.cacheMeasurement,nonCacheMeasurement=param.nonCacheMeasurement,errorMeasurement=param.errorMeasurement,pushInvalidFormatAssets=param.pushInvalidFormatAssets,cliProgressBarIncrement=param.cliProgressBarIncrement,originalFilePath=param.originalFilePath,output=param.output,width=param.width,quality=param.quality,extension=param.extension,sharpOptions=param.sharpOptions;
+if(!(0,_formatValidate.default)(extension)){_ctx.next=62;
+break}_ctx.prev=2;
+filePath=_path.default.join(destDir,output);
+_ctx.next=6;
+return _fsExtra.default.ensureFile(filePath);
+case 6:outputPath=_path.default.join(cacheDir,output);
+_ctx.next=9;
+return _fsExtra.default.ensureFile(outputPath);
+case 9:_ctx.next=11;
+return _fsExtra.default.readFile(originalFilePath);
+case 11:imageBuffer=_ctx.sent;
+if(noCache){_ctx.next=29;
+break}cacheImagesFindIndex=cacheImages.findIndex(function(cacheImage){return cacheImage.output===output});
+hash=(0,_crypto.createHash)("sha256").update(imageBuffer).digest("hex");
+if(!(cacheImagesFindIndex=== -1)){_ctx.next=19;
+break}{cacheImages.push({output:output,hash:hash})}_ctx.next=29;
+break;
+case 19:currentCacheImage=cacheImages[cacheImagesFindIndex];
+if(!((currentCacheImage===null||currentCacheImage===void 0?void 0:currentCacheImage.hash)===hash)){_ctx.next=28;
+break}_ctx.next=23;
+return _fsExtra.default.copy(outputPath,filePath);
+case 23:cacheMeasurement();
+cliProgressBarIncrement();
+return _ctx.abrupt("return");
+case 28:{if(currentCacheImage!==undefined)currentCacheImage.hash=hash}case 29:image=(0,_sharp.default)(imageBuffer,{sequentialRead:true});
+image.rotate().resize({width:width,withoutEnlargement:true});
+_ctx.t0=extension;
+_ctx.next=_ctx.t0==="jpeg"?34:_ctx.t0==="jpg"?37:_ctx.t0==="png"?40:_ctx.t0==="webp"?43:_ctx.t0==="avif"?46:49;
+break;
+case 34:_ctx.next=36;
+return image.jpeg(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.jpg)).toFile(outputPath);
+case 36:return _ctx.abrupt("break",49);
+case 37:_ctx.next=39;
+return image.jpeg(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.jpg)).toFile(outputPath);
+case 39:return _ctx.abrupt("break",49);
+case 40:_ctx.next=42;
+return image.png(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.png)).toFile(outputPath);
+case 42:return _ctx.abrupt("break",49);
+case 43:_ctx.next=45;
+return image.webp(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.webp)).toFile(outputPath);
+case 45:return _ctx.abrupt("break",49);
+case 46:_ctx.next=48;
+return image.avif(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.avif)).toFile(outputPath);
+case 48:return _ctx.abrupt("break",49);
+case 49:_ctx.next=51;
+return _fsExtra.default.copy(outputPath,filePath);
+case 51:nonCacheMeasurement();
+cliProgressBarIncrement();
+_ctx.next=60;
+break;
+case 55:_ctx.prev=55;
+_ctx.t1=_ctx["catch"](2);
+console.warn(_ctx.t1);
+cliProgressBarIncrement();
+errorMeasurement();
+case 60:_ctx.next=77;
+break;
+case 62:_ctx.prev=62;
+filePath1=_path.default.join(destDir,output);
+_ctx.next=66;
+return _fsExtra.default.ensureFile(filePath1);
+case 66:_ctx.next=68;
+return _fsExtra.default.copy(originalFilePath,filePath1);
+case 68:pushInvalidFormatAssets(originalFilePath);
+cliProgressBarIncrement();
+_ctx.next=77;
+break;
+case 72:_ctx.prev=72;
+_ctx.t2=_ctx["catch"](62);
+console.warn(_ctx.t2);
+cliProgressBarIncrement();
+errorMeasurement();
+case 77:case"end":return _ctx.stop()}},_callee,null,[[2,55],[62,72]])}));
+return function getOptimizeResult(_){return _ref.apply(this,arguments)}}();
+var cwd=process.cwd();
+var optimizeImages=function(){var _ref=_asyncToGenerator(_regeneratorRuntime.default.mark(function _callee(param){var manifestJsonPath,noCache,config,_terse,terse,_outDir,destDir,manifest,cacheImages,promises,measuredCache,measuredNonCache,measuredError,invalidFormatAssets,cacheMeasurement,nonCacheMeasurement,errorMeasurement,pushInvalidFormatAssets,_iteratorNormalCompletion,_didIteratorError,_iteratorError,_iterator,_step,item,originalFilePath,_sharpOptions;
+return _regeneratorRuntime.default.wrap(function _callee$(_ctx){while(1)switch(_ctx.prev=_ctx.next){case 0:manifestJsonPath=param.manifestJsonPath,noCache=param.noCache,config=param.config,_terse=param.terse,terse=_terse===void 0?false:_terse;
+destDir=_path.default.resolve(cwd,(_outDir=config.outDir)!==null&&_outDir!==void 0?_outDir:"out");
+_ctx.prev=4;
+_ctx.t0=_uniqueItems.default;
+_ctx.t1=_processManifest.default;
+_ctx.next=9;
+return _fsExtra.default.readFile(manifestJsonPath,"utf-8");
+case 9:_ctx.t2=_ctx.sent;
+_ctx.t3=(0,_ctx.t1)(_ctx.t2);
+manifest=(0,_ctx.t0)(_ctx.t3);
+_ctx.next=17;
+break;
+case 14:_ctx.prev=14;
+_ctx.t4=_ctx["catch"](4);
+throw Error(typeof _ctx.t4==="string"?_ctx.t4:"Unexpected error.");
+case 17:if(!manifest.some(function(param){var externalUrl=param.externalUrl;
+return externalUrl!==undefined})){_ctx.next=20;
+break}_ctx.next=20;
+return(0,_externalImages.default)({terse:terse,manifest:manifest,destDir:destDir});
+case 20:if(!terse){console.log("\n- Image Optimization -");
+(0,_cliProgressBar.cliProgressBarStart)(manifest.length)}cacheImages=[];
+if(noCache){_ctx.next=26;
+break}_ctx.next=25;
+return(0,_cache.createCacheDir)();
+case 25:cacheImages=(0,_cache.readCacheManifest)();
+case 26:promises=[];
+measuredCache=0;
+measuredNonCache=0;
+measuredError=0;
+invalidFormatAssets=new Set([]);
+cacheMeasurement=function(){return measuredCache+=1};
+nonCacheMeasurement=function(){return measuredNonCache+=1};
+errorMeasurement=function(){return measuredError+=1};
+pushInvalidFormatAssets=function(asset){return invalidFormatAssets.add(asset)};
+_iteratorNormalCompletion=true,_didIteratorError=false,_iteratorError=undefined;
+_ctx.prev=36;
+for(_iterator=manifest[Symbol.iterator]();
+!(_iteratorNormalCompletion=(_step=_iterator.next()).done);
+_iteratorNormalCompletion=true){item=_step.value;
+originalFilePath=_path.default.join(destDir,item.src);
+promises.push(getOptimizeResult(_objectSpread({destDir:destDir,noCache:noCache,cacheImages:cacheImages,cacheDir:_cache.defaultCacheDir,cacheMeasurement:cacheMeasurement,nonCacheMeasurement:nonCacheMeasurement,errorMeasurement:errorMeasurement,pushInvalidFormatAssets:pushInvalidFormatAssets,cliProgressBarIncrement:terse?function(){return undefined}:_cliProgressBar.cliProgressBarIncrement,originalFilePath:originalFilePath,sharpOptions:(_sharpOptions=config.sharpOptions)!==null&&_sharpOptions!==void 0?_sharpOptions:{}},item)))}_ctx.next=44;
+break;
+case 40:_ctx.prev=40;
+_ctx.t5=_ctx["catch"](36);
+_didIteratorError=true;
+_iteratorError=_ctx.t5;
+case 44:_ctx.prev=44;
+_ctx.prev=45;
+if(!_iteratorNormalCompletion&&_iterator.return!=null){_iterator.return()}case 47:_ctx.prev=47;
+if(!_didIteratorError){_ctx.next=50;
+break}throw _iteratorError;
+case 50:return _ctx.finish(47);
+case 51:return _ctx.finish(44);
+case 52:_ctx.next=54;
+return Promise.all(promises);
+case 54:if(!noCache){(0,_cache.writeCacheManifest)(cacheImages)}if(!terse){console.log("Cache assets: ".concat(measuredCache,", NonCache assets: ").concat(measuredNonCache,", Error assets: ").concat(measuredError));
+if(invalidFormatAssets.size!==0){console.log("\nThe following images is in a non-optimized format and a simple copy was applied.\n",Array.from(invalidFormatAssets).join("\n"))}console.log(_ansiColors.default.bold.magenta("\nSuccessful optimization!"))}case 56:case"end":return _ctx.stop()}},_callee,null,[[4,14],[36,40,44,52],[45,,47,51]])}));
+return function optimizeImages(_){return _ref.apply(this,arguments)}}();
+var run=function(param){var customManifestJsonPath=param.customManifestJsonPath,_noCache=param.noCache,noCache=_noCache===void 0?false:_noCache;
+console.log(_ansiColors.default.bold.magenta("\nnext-export-optimize-images: Optimize images."));
+var config=(0,_getConfig.default)();
+var manifestJsonPath=_path.default.resolve(cwd,customManifestJsonPath!==null&&customManifestJsonPath!==void 0?customManifestJsonPath:".next/custom-optimized-images.nd.json");
+optimizeImages({manifestJsonPath:manifestJsonPath,noCache:noCache,config:config})}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+Error: Unexpected error.
+    at _callee$ (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:7732)
+    at tryCatch (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:294:22)
+    at Generator.throw (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:119:21)
+    at asyncGeneratorStep (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:1221)
+    at _throw (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:1617)
+Node.js v18.3.0
+
+
+
+
+
+
+////////////////////////
+-------- with API route deleted --------
+
+
+spudunk@MacBook-Air fernwehoutfitters.com % npm run export
+> fernwehoutfitters.com@0.1.0 export
+> next build && next export  && next-export-optimize-images
+info - [next-export-optimize-images]: Configuration loaded from `/Users/spudunk/Documents/Code/fernwehoutfitters.com/export-images.config.js`.
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+info  - Linting and checking validity of types  
+info  - Creating an optimized production build  
+info  - Compiled successfully
+info  - Collecting page data  
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization  
+Page                                       Size     First Load JS
+┌ ○ / (699 ms)                             79.8 kB         158 kB
+├   └ css/a171bbef9f1fd4d1.css             183 B
+├   /_app                                  0 B            77.7 kB
+└ ○ /404                                   186 B          77.9 kB
++ First Load JS shared by all              77.7 kB
+  ├ chunks/framework-db825bd0b4ae01ef.js   45.7 kB
+  ├ chunks/main-c116b7e3001a0605.js        30.7 kB
+  ├ chunks/pages/_app-0e6b46beaaa55ac1.js  498 B
+  ├ chunks/webpack-3433a2a2d0cf6fb6.js     819 B
+  └ css/8da07ad022fd84ba.css               205 B
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+info - [next-export-optimize-images]: Configuration loaded from `/Users/spudunk/Documents/Code/fernwehoutfitters.com/export-images.config.js`.
+info  - SWC minify release candidate enabled. https://nextjs.link/swcmin
+info  - using build directory: /Users/spudunk/Documents/Code/fernwehoutfitters.com/.next
+info  - Copying "static build" directory
+info  - No "exportPathMap" found in "/Users/spudunk/Documents/Code/fernwehoutfitters.com/next.config.js". Generating map from "./pages"
+info  - Launching 7 workers
+info  - Copying "public" directory
+info  - Exporting (3/3)
+Export successful. Files written to /Users/spudunk/Documents/Code/fernwehoutfitters.com/out
+
+next-export-optimize-images: Optimize images.
+/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1
+"use strict";
+Object.defineProperty(exports,"__esModule",{value:true});
+function _export(target,all){for(var name in all)Object.defineProperty(target,name,{enumerable:true,get:all[name]})}_export(exports,{getOptimizeResult:function(){return getOptimizeResult},optimizeImages:function(){return optimizeImages},run:function(){return run}});
+var _regeneratorRuntime=_interopRequireDefault(require("regenerator-runtime"));
+var _crypto=require("crypto");
+var _path=_interopRequireDefault(require("path"));
+var _ansiColors=_interopRequireDefault(require("ansi-colors"));
+var _fsExtra=_interopRequireDefault(require("fs-extra"));
+var _sharp=_interopRequireDefault(require("sharp"));
+var _getConfig=_interopRequireDefault(require("../utils/getConfig"));
+var _processManifest=_interopRequireDefault(require("../utils/processManifest"));
+var _externalImages=_interopRequireDefault(require("./external-images"));
+var _cache=require("./utils/cache");
+var _cliProgressBar=require("./utils/cliProgressBar");
+var _formatValidate=_interopRequireDefault(require("./utils/formatValidate"));
+var _uniqueItems=_interopRequireDefault(require("./utils/uniqueItems"));
+function asyncGeneratorStep(gen,resolve,reject,_next,_throw,key,arg){try{var info=gen[key](arg);
+var value=info.value}catch(error){reject(error);
+return}if(info.done){resolve(value)}else{Promise.resolve(value).then(_next,_throw)}}function _asyncToGenerator(fn){return function(){var self=this,args=arguments;
+return new Promise(function(resolve,reject){var gen=fn.apply(self,args);
+function _next(value){asyncGeneratorStep(gen,resolve,reject,_next,_throw,"next",value)}function _throw(err){asyncGeneratorStep(gen,resolve,reject,_next,_throw,"throw",err)}_next(undefined)})}}function _defineProperty(obj,key,value){if(key in obj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true})}else{obj[key]=value}return obj}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function _objectSpread(target){for(var i=1;
+i<arguments.length;
+i++){var source=arguments[i]!=null?arguments[i]:{};
+var ownKeys=Object.keys(source);
+if(typeof Object.getOwnPropertySymbols==="function"){ownKeys=ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym){return Object.getOwnPropertyDescriptor(source,sym).enumerable}))}ownKeys.forEach(function(key){_defineProperty(target,key,source[key])})}return target}var getOptimizeResult=function(){var _ref=_asyncToGenerator(_regeneratorRuntime.default.mark(function _callee(param){var destDir,noCache,cacheImages,cacheDir,cacheMeasurement,nonCacheMeasurement,errorMeasurement,pushInvalidFormatAssets,cliProgressBarIncrement,originalFilePath,output,width,quality,extension,sharpOptions,filePath,outputPath,imageBuffer,cacheImagesFindIndex,hash,currentCacheImage,image,filePath1;
+return _regeneratorRuntime.default.wrap(function _callee$(_ctx){while(1)switch(_ctx.prev=_ctx.next){case 0:destDir=param.destDir,noCache=param.noCache,cacheImages=param.cacheImages,cacheDir=param.cacheDir,cacheMeasurement=param.cacheMeasurement,nonCacheMeasurement=param.nonCacheMeasurement,errorMeasurement=param.errorMeasurement,pushInvalidFormatAssets=param.pushInvalidFormatAssets,cliProgressBarIncrement=param.cliProgressBarIncrement,originalFilePath=param.originalFilePath,output=param.output,width=param.width,quality=param.quality,extension=param.extension,sharpOptions=param.sharpOptions;
+if(!(0,_formatValidate.default)(extension)){_ctx.next=62;
+break}_ctx.prev=2;
+filePath=_path.default.join(destDir,output);
+_ctx.next=6;
+return _fsExtra.default.ensureFile(filePath);
+case 6:outputPath=_path.default.join(cacheDir,output);
+_ctx.next=9;
+return _fsExtra.default.ensureFile(outputPath);
+case 9:_ctx.next=11;
+return _fsExtra.default.readFile(originalFilePath);
+case 11:imageBuffer=_ctx.sent;
+if(noCache){_ctx.next=29;
+break}cacheImagesFindIndex=cacheImages.findIndex(function(cacheImage){return cacheImage.output===output});
+hash=(0,_crypto.createHash)("sha256").update(imageBuffer).digest("hex");
+if(!(cacheImagesFindIndex=== -1)){_ctx.next=19;
+break}{cacheImages.push({output:output,hash:hash})}_ctx.next=29;
+break;
+case 19:currentCacheImage=cacheImages[cacheImagesFindIndex];
+if(!((currentCacheImage===null||currentCacheImage===void 0?void 0:currentCacheImage.hash)===hash)){_ctx.next=28;
+break}_ctx.next=23;
+return _fsExtra.default.copy(outputPath,filePath);
+case 23:cacheMeasurement();
+cliProgressBarIncrement();
+return _ctx.abrupt("return");
+case 28:{if(currentCacheImage!==undefined)currentCacheImage.hash=hash}case 29:image=(0,_sharp.default)(imageBuffer,{sequentialRead:true});
+image.rotate().resize({width:width,withoutEnlargement:true});
+_ctx.t0=extension;
+_ctx.next=_ctx.t0==="jpeg"?34:_ctx.t0==="jpg"?37:_ctx.t0==="png"?40:_ctx.t0==="webp"?43:_ctx.t0==="avif"?46:49;
+break;
+case 34:_ctx.next=36;
+return image.jpeg(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.jpg)).toFile(outputPath);
+case 36:return _ctx.abrupt("break",49);
+case 37:_ctx.next=39;
+return image.jpeg(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.jpg)).toFile(outputPath);
+case 39:return _ctx.abrupt("break",49);
+case 40:_ctx.next=42;
+return image.png(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.png)).toFile(outputPath);
+case 42:return _ctx.abrupt("break",49);
+case 43:_ctx.next=45;
+return image.webp(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.webp)).toFile(outputPath);
+case 45:return _ctx.abrupt("break",49);
+case 46:_ctx.next=48;
+return image.avif(_objectSpread({quality:quality},sharpOptions===null||sharpOptions===void 0?void 0:sharpOptions.avif)).toFile(outputPath);
+case 48:return _ctx.abrupt("break",49);
+case 49:_ctx.next=51;
+return _fsExtra.default.copy(outputPath,filePath);
+case 51:nonCacheMeasurement();
+cliProgressBarIncrement();
+_ctx.next=60;
+break;
+case 55:_ctx.prev=55;
+_ctx.t1=_ctx["catch"](2);
+console.warn(_ctx.t1);
+cliProgressBarIncrement();
+errorMeasurement();
+case 60:_ctx.next=77;
+break;
+case 62:_ctx.prev=62;
+filePath1=_path.default.join(destDir,output);
+_ctx.next=66;
+return _fsExtra.default.ensureFile(filePath1);
+case 66:_ctx.next=68;
+return _fsExtra.default.copy(originalFilePath,filePath1);
+case 68:pushInvalidFormatAssets(originalFilePath);
+cliProgressBarIncrement();
+_ctx.next=77;
+break;
+case 72:_ctx.prev=72;
+_ctx.t2=_ctx["catch"](62);
+console.warn(_ctx.t2);
+cliProgressBarIncrement();
+errorMeasurement();
+case 77:case"end":return _ctx.stop()}},_callee,null,[[2,55],[62,72]])}));
+return function getOptimizeResult(_){return _ref.apply(this,arguments)}}();
+var cwd=process.cwd();
+var optimizeImages=function(){var _ref=_asyncToGenerator(_regeneratorRuntime.default.mark(function _callee(param){var manifestJsonPath,noCache,config,_terse,terse,_outDir,destDir,manifest,cacheImages,promises,measuredCache,measuredNonCache,measuredError,invalidFormatAssets,cacheMeasurement,nonCacheMeasurement,errorMeasurement,pushInvalidFormatAssets,_iteratorNormalCompletion,_didIteratorError,_iteratorError,_iterator,_step,item,originalFilePath,_sharpOptions;
+return _regeneratorRuntime.default.wrap(function _callee$(_ctx){while(1)switch(_ctx.prev=_ctx.next){case 0:manifestJsonPath=param.manifestJsonPath,noCache=param.noCache,config=param.config,_terse=param.terse,terse=_terse===void 0?false:_terse;
+destDir=_path.default.resolve(cwd,(_outDir=config.outDir)!==null&&_outDir!==void 0?_outDir:"out");
+_ctx.prev=4;
+_ctx.t0=_uniqueItems.default;
+_ctx.t1=_processManifest.default;
+_ctx.next=9;
+return _fsExtra.default.readFile(manifestJsonPath,"utf-8");
+case 9:_ctx.t2=_ctx.sent;
+_ctx.t3=(0,_ctx.t1)(_ctx.t2);
+manifest=(0,_ctx.t0)(_ctx.t3);
+_ctx.next=17;
+break;
+case 14:_ctx.prev=14;
+_ctx.t4=_ctx["catch"](4);
+throw Error(typeof _ctx.t4==="string"?_ctx.t4:"Unexpected error.");
+case 17:if(!manifest.some(function(param){var externalUrl=param.externalUrl;
+return externalUrl!==undefined})){_ctx.next=20;
+break}_ctx.next=20;
+return(0,_externalImages.default)({terse:terse,manifest:manifest,destDir:destDir});
+case 20:if(!terse){console.log("\n- Image Optimization -");
+(0,_cliProgressBar.cliProgressBarStart)(manifest.length)}cacheImages=[];
+if(noCache){_ctx.next=26;
+break}_ctx.next=25;
+return(0,_cache.createCacheDir)();
+case 25:cacheImages=(0,_cache.readCacheManifest)();
+case 26:promises=[];
+measuredCache=0;
+measuredNonCache=0;
+measuredError=0;
+invalidFormatAssets=new Set([]);
+cacheMeasurement=function(){return measuredCache+=1};
+nonCacheMeasurement=function(){return measuredNonCache+=1};
+errorMeasurement=function(){return measuredError+=1};
+pushInvalidFormatAssets=function(asset){return invalidFormatAssets.add(asset)};
+_iteratorNormalCompletion=true,_didIteratorError=false,_iteratorError=undefined;
+_ctx.prev=36;
+for(_iterator=manifest[Symbol.iterator]();
+!(_iteratorNormalCompletion=(_step=_iterator.next()).done);
+_iteratorNormalCompletion=true){item=_step.value;
+originalFilePath=_path.default.join(destDir,item.src);
+promises.push(getOptimizeResult(_objectSpread({destDir:destDir,noCache:noCache,cacheImages:cacheImages,cacheDir:_cache.defaultCacheDir,cacheMeasurement:cacheMeasurement,nonCacheMeasurement:nonCacheMeasurement,errorMeasurement:errorMeasurement,pushInvalidFormatAssets:pushInvalidFormatAssets,cliProgressBarIncrement:terse?function(){return undefined}:_cliProgressBar.cliProgressBarIncrement,originalFilePath:originalFilePath,sharpOptions:(_sharpOptions=config.sharpOptions)!==null&&_sharpOptions!==void 0?_sharpOptions:{}},item)))}_ctx.next=44;
+break;
+case 40:_ctx.prev=40;
+_ctx.t5=_ctx["catch"](36);
+_didIteratorError=true;
+_iteratorError=_ctx.t5;
+case 44:_ctx.prev=44;
+_ctx.prev=45;
+if(!_iteratorNormalCompletion&&_iterator.return!=null){_iterator.return()}case 47:_ctx.prev=47;
+if(!_didIteratorError){_ctx.next=50;
+break}throw _iteratorError;
+case 50:return _ctx.finish(47);
+case 51:return _ctx.finish(44);
+case 52:_ctx.next=54;
+return Promise.all(promises);
+case 54:if(!noCache){(0,_cache.writeCacheManifest)(cacheImages)}if(!terse){console.log("Cache assets: ".concat(measuredCache,", NonCache assets: ").concat(measuredNonCache,", Error assets: ").concat(measuredError));
+if(invalidFormatAssets.size!==0){console.log("\nThe following images is in a non-optimized format and a simple copy was applied.\n",Array.from(invalidFormatAssets).join("\n"))}console.log(_ansiColors.default.bold.magenta("\nSuccessful optimization!"))}case 56:case"end":return _ctx.stop()}},_callee,null,[[4,14],[36,40,44,52],[45,,47,51]])}));
+return function optimizeImages(_){return _ref.apply(this,arguments)}}();
+var run=function(param){var customManifestJsonPath=param.customManifestJsonPath,_noCache=param.noCache,noCache=_noCache===void 0?false:_noCache;
+console.log(_ansiColors.default.bold.magenta("\nnext-export-optimize-images: Optimize images."));
+var config=(0,_getConfig.default)();
+var manifestJsonPath=_path.default.resolve(cwd,customManifestJsonPath!==null&&customManifestJsonPath!==void 0?customManifestJsonPath:".next/custom-optimized-images.nd.json");
+optimizeImages({manifestJsonPath:manifestJsonPath,noCache:noCache,config:config})}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+Error: Unexpected error.
+    at _callee$ (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:7732)
+    at tryCatch (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:294:22)
+    at Generator.throw (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/regenerator-runtime/runtime.js:119:21)
+    at asyncGeneratorStep (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:1221)
+    at _throw (/Users/spudunk/Documents/Code/fernwehoutfitters.com/node_modules/next-export-optimize-images/dist/cli/index.js:1:1617)
+Node.js v18.3.0
