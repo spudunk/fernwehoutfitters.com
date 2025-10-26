@@ -1,7 +1,7 @@
 import Card from "./card";
 import styles from "./products.module.css";
 
-import mugPic from "../../public/mug.jpeg";
+import seedPic from "../../public/seedpaper.png";
 import crystalPic from "../../public/crystal.webp";
 import apparelPic from "../../public/apparel.jpeg";
 
@@ -13,13 +13,14 @@ const Products = () => {
 
         <div className={styles.products}>
           <Card
-            title="Mugs"
+            title="Seed Paper"
             image={{
-              src: mugPic,
-              alt: "handcrafted ceramic mug with mushroom decoration",
+              src: seedPic,
+              alt: "seeds embedded in natural paper",
             }}
           >
-            <p>Handcrafted One Of A Kind Mugs From Artist Jamie Quills</p>
+            <p>Handcrafted seed paper tags <br />
+            An eco friendly twist turning a gift tag from future trash to future flowers.  </p>
           </Card>
 
           <Card

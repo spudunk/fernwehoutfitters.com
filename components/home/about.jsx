@@ -56,7 +56,7 @@ const About = () => {
         </div>
 
         <div>
-          <h2 className={styles.title}>Owner &amp; Opperator </h2>
+          <h2 className={styles.title}>Owner &amp; Operator </h2>
           <p>
             My name is Angel Victoria Allen, thanks for exploring my website! I
             have a personal dream of connecting people through experiences and
