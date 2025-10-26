@@ -12,7 +12,6 @@ import Footer from "../components/footer";
 // Styles
 import styles from "../styles/Home.module.css";
 
-import { app, analytics } from "../firebase/initFirebase";
 
 export default function Home() {
   return (
@@ -43,10 +42,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* <Hero />
+        <Hero />
         <About />
         <Products />
-        <Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </div>

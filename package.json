@@ -10,15 +10,14 @@
     "export": "next build && next export  && next-export-optimize-images"
   },
   "dependencies": {
-    "firebase": "^9.9.3",
-    "next": "^12.2.4",
+    "next": "^12.3.7",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@icons-pack/react-simple-icons": "^5.4.0",
+    "@icons-pack/react-simple-icons": "^5.11.0",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
-    "next-export-optimize-images": "^1.6.0"
+    "next-export-optimize-images": "^1.9.2"
   }
 }
